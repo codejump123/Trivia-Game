@@ -1,3 +1,11 @@
+Executive Session, CISC 594  
+In class assignment
+
+Team:
+- Isit Pokharel
+- Durga Sai Sandeep Rayapureddy
+- Thien Tan Nguyen
+
 # Trivia Game (Client-Server)
 
 This is a simple client-server trivia game for class. The server manages users, questions, and scoring. The client lets you register/login and play rounds by category with a wager. It's small on purpose so the flow is easy to follow.

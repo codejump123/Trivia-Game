@@ -1,65 +1,47 @@
-# Review Reports
+# Owner Review - Isit Pokharel
 
-## Author Template
-Role: Author (Code & Unit Test Owner)
-
-### Review Metadata
-- Project / Module Name: Trivia Game (Client–Server)
+## Review Overview
+- Project / Module Name: Trivia Game (Client-Server)
 - Author Name: Isit Pokharel
+- Role: Author (Code & Unit Test Owner)
 - Review Date: 2026-02-07
 - Code Repository / Branch: /Users/isit/Trivia-Game — master
 
-### Unit Description
-Provide a concise description of the code under review.
+## Scope
+Reviewed core modules for gameplay flow, protocol handling, and persistence:
+`server/`, `client/`, `common/`, and `tests/`.
 
-- Purpose of the unit/module:
-  Implement a distributed trivia game with authentication, category-based questions,
-  wagering, scoring, and persistent user stats. It's meant to be small but complete.
-- Primary responsibilities:
-  - Server: authenticate users, validate wagers, select questions, score answers,
-    persist stats, handle concurrency.
-  - Client: CLI flow for login/register, gameplay, and stats display.
-  - Protocol: validate/encode/decode JSON message format.
-- Key inputs and outputs:
-  - Inputs: JSON requests (register, login, get_categories, request_question,
-    submit_answer, get_stats, etc.).
-  - Outputs: JSON responses with status, payload (question/stats/result), or error
-    codes/messages.
+## Quick Summary
+The overall flow works and tests pass, but there are a few usability and robustness
+items worth tracking (mostly minor).
 
-### Test Strategy Summary
-Explain how the unit is tested.
+## Findings (Owner Review)
+1. `client/client.py` → stats view (Minor, Usability)  
+   Stats display does not show accuracy or win/loss ratio explicitly (only points,
+   games played, correct/incorrect).  
+   **Fix:** Add a calculated accuracy line (e.g., correct / total * 100).
 
-- Types of tests included:
-  Unit tests (core logic, protocol, question selection), system tests
-  (client–server flow), edge-case/negative tests (invalid protocol/requests).
-- Coverage focus:
-  Core logic (wager validation, scoring, stats updates), boundary conditions,
-  failure paths in protocol handling.
-- Tools/frameworks used:
-  Python unittest (python -m unittest discover -s tests).
+2. `server/data_store.py` → persistence (Minor, Robustness)  
+   JSON files are the only storage option. It is simple but fragile if files are
+   edited manually or corrupted.  
+   **Fix:** Add light validation or a safer fallback when JSON is invalid.
 
-### Known Limitations or Risks
-Be explicit and honest.
+3. `server/question_bank.py` → no-repeat logic (Minor, Design)  
+   The recent-question strategy is intentionally simple and does not consider
+   difficulty or long-term balancing.  
+   **Fix:** Keep as-is for scope, or extend later with per-category weighting.
 
-- Known limitations:
-  - Client stats view does not explicitly show accuracy/win-loss ratio (only points,
-    games, correct/incorrect).
-  - CLI-only interface (no GUI).
-- Technical debt or shortcuts:
-  - JSON file storage instead of a database.
-  - Simple "recent questions" no-repeat strategy (no adaptive difficulty).
-- Assumptions made:
-  - Single-machine/local usage.
-  - Trusted network and no encrypted transport (no TLS).
-- Areas reviewers should pay special attention to:
-  - Protocol validation and error handling.
-  - Wager validation/scoring edge cases.
-  - Data consistency under concurrent access.
+4. `common/protocol.py` → request validation (Minor, Clarity)  
+   Validation is minimal and leaves type checks to later stages. This can make
+   error messages feel inconsistent.  
+   **Fix:** Add optional type checks for common fields (wager, answer_index, category).
 
-### Review Expectations
-- Requested focus areas:
-  Logic correctness, protocol robustness, test coverage depth, edge cases,
-  concurrency behavior.
-- Out-of-scope items (if any):
-  GUI client, deployment scripts, performance optimization beyond baseline,
-  production-grade security.
+## Test Strategy
+- Unit tests cover core logic (wager validation, scoring, stats updates).
+- System tests exercise a basic end-to-end gameplay path.
+- Tools: Python unittest (`python -m unittest discover -s tests`).
+
+## Assumptions / Notes
+- CLI-only interface is acceptable for the assignment.
+- Local, trusted environment (no TLS).
+- JSON persistence is fine for course scope.

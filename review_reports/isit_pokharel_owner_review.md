@@ -7,7 +7,6 @@ Role: Author (Code & Unit Test Owner)
 - Project / Module Name: Trivia Game (Client–Server)
 - Author Name: Isit Pokharel
 - Review Date: 2026-02-07
-- Review Round: Round 1
 - Code Repository / Branch: /Users/isit/Trivia-Game — master
 
 ### Unit Description

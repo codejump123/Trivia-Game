@@ -1,1 +1,20 @@
-{}
+{
+  "isit": {
+    "password_hash": "0e654b873f881738516e43ba4215de92069a2789fa5be9de8cd4464b50fe2611",
+    "recent_questions": {
+      "History": [
+        "hist_003"
+      ],
+      "Science": [
+        "sci_003"
+      ]
+    },
+    "salt": "26695433c65bec45f81304ab4779fa3e",
+    "stats": {
+      "correct_answers": 2,
+      "games_played": 2,
+      "incorrect_answers": 0,
+      "points": 120
+    }
+  }
+}

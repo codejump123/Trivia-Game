@@ -39,13 +39,11 @@ class GameLogicTests(unittest.TestCase):
             "games_played": 0,
             "correct_answers": 0,
             "incorrect_answers": 0,
-            "by_category": {},
         }
-        update_stats(stats, "Science", True)
+        update_stats(stats, True)
         self.assertEqual(stats["games_played"], 1)
         self.assertEqual(stats["correct_answers"], 1)
         self.assertEqual(stats["incorrect_answers"], 0)
-        self.assertEqual(stats["by_category"]["Science"]["games_played"], 1)
 
 
 if __name__ == "__main__":

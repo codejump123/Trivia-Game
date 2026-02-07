@@ -9,9 +9,8 @@ RECENT_QUESTIONS_LIMIT = 5
 
 
 class DataStore:
-    def __init__(self, users_path, questions_path):
+    def __init__(self, users_path):
         self.users_path = users_path
-        self.questions_path = questions_path
         self._lock = threading.RLock()
         self._users = self._load_json(self.users_path, default={})
 
@@ -39,7 +38,6 @@ class DataStore:
                     "games_played": 0,
                     "correct_answers": 0,
                     "incorrect_answers": 0,
-                    "by_category": {},
                 },
                 "recent_questions": {},
             }

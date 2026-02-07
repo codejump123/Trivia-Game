@@ -144,7 +144,7 @@ class TriviaRequestHandler(socketserver.StreamRequestHandler):
         stats = self.server.data_store.get_user_stats(self.session["user"])
         new_points, delta = apply_answer(stats["points"], pending["wager"], is_correct)
         stats["points"] = new_points
-        update_stats(stats, pending["category"], is_correct)
+        update_stats(stats, is_correct)
         self.server.data_store.update_user_stats(self.session["user"], stats)
 
         self.session["pending"] = None
@@ -183,7 +183,7 @@ class ThreadedTriviaServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
 def start_server(host, port, data_dir):
     users_path = f"{data_dir}/users.json"
     questions_path = f"{data_dir}/questions.json"
-    data_store = DataStore(users_path, questions_path)
+    data_store = DataStore(users_path)
     question_bank = QuestionBank(questions_path)
     server = ThreadedTriviaServer((host, port), TriviaRequestHandler, data_store, question_bank)
     thread = threading.Thread(target=server.serve_forever, daemon=True)

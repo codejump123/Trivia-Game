@@ -17,20 +17,9 @@ def apply_answer(current_points, wager, is_correct):
     return new_points, -wager
 
 
-def update_stats(stats, category, is_correct):
+def update_stats(stats, is_correct):
     stats["games_played"] += 1
     if is_correct:
         stats["correct_answers"] += 1
     else:
         stats["incorrect_answers"] += 1
-
-    by_category = stats.setdefault("by_category", {})
-    category_stats = by_category.setdefault(
-        category,
-        {"correct_answers": 0, "incorrect_answers": 0, "games_played": 0},
-    )
-    category_stats["games_played"] += 1
-    if is_correct:
-        category_stats["correct_answers"] += 1
-    else:
-        category_stats["incorrect_answers"] += 1

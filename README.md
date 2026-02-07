@@ -37,7 +37,7 @@ python -m client.client --host 127.0.0.1 --port 5000
 - `data/`: persistent JSON data (`users.json`, `questions.json`)
 - `tests/`: unit and system tests
 - `docs/`: documentation and reports
-- `review_reports/`: author review templates and notes
+- `review_reports/`: review templates and reviewer reports
 
 ## Deliverables
 - Source code for client and server (`client/`, `server/`)
@@ -45,5 +45,10 @@ python -m client.client --host 127.0.0.1 --port 5000
 - Code and unit test review artifacts:
   - Review log (`docs/REVIEW_LOG.md`)
   - Review report (`docs/REVIEW_REPORT.md`)
-- Author review template (`review_reports/isit_pokharel_owner_review.md`)
+- Review lead report (`review_reports/Review Lead Report.md`)
+- Owner review (`review_reports/isit_pokharel_owner_review.md`)
+- Logic/edge review (`review_reports/thien_tan_logic_edge_review.md`)
+- Design/maintainability review (`review_reports/durga_design_maintainability_review.md`)
+- Unit test review (`review_reports/cr_unit_tests.md`)
+- Scribe log (`review_reports/scribe_role.md`)
 - System test report (`docs/SYSTEM_TEST_REPORT.md`)

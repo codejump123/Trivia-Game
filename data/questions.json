@@ -71,5 +71,52 @@
       "Host Transfer Protocol"
     ],
     "answer_index": 0
+  },
+  {
+    "id": "hist_004",
+    "category": "History",
+    "question": "In which year did World War II end?",
+    "options": ["1942", "1945", "1948", "1951"],
+    "answer_index": 1
+  },
+  {
+    "id": "hist_005",
+    "category": "History",
+    "question": "Which empire built the Colosseum?",
+    "options": ["Greek", "Roman", "Ottoman", "Persian"],
+    "answer_index": 1
+  },
+  {
+    "id": "sci_004",
+    "category": "Science",
+    "question": "What part of the cell contains genetic material?",
+    "options": ["Mitochondria", "Nucleus", "Ribosome", "Cytoplasm"],
+    "answer_index": 1
+  },
+  {
+    "id": "sci_005",
+    "category": "Science",
+    "question": "How many planets are in the Solar System?",
+    "options": ["7", "8", "9", "10"],
+    "answer_index": 1
+  },
+  {
+    "id": "tech_004",
+    "category": "Technology",
+    "question": "Which company created the Linux kernel?",
+    "options": ["Microsoft", "Apple", "Linus Torvalds", "IBM"],
+    "answer_index": 2
+  },
+  {
+    "id": "tech_005",
+    "category": "Technology",
+    "question": "What does RAM stand for?",
+    "options": [
+      "Read Access Memory",
+      "Random Access Memory",
+      "Rapid Access Module",
+      "Run Access Memory"
+    ],
+    "answer_index": 1
   }
 ]

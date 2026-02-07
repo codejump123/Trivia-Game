@@ -1,4 +1,5 @@
 ## Review Report
+This report was put together from the review log and the latest test run.
 
 ### Review Scope
 Reviewed units: `server/game_logic.py`, `server/question_bank.py`, `server/server.py`,
@@ -20,8 +21,9 @@ Reviewed units: `server/game_logic.py`, `server/question_bank.py`, `server/serve
 
 ### Test Quality Assessment
 - Unit tests cover wager validation, scoring, stats updates, and question selection.
-- System test exercises client–server flow with registration, login, question request, and answer submission.
+- System test exercises client-server flow with registration, login, question request, and answer submission.
 - Additional test coverage added for protocol validation and question selection edge cases.
+- Latest test run: 2026-02-07, 8 tests passed (python3 -m unittest discover -s tests).
 
 ### Review Coverage Metrics
 - Files reviewed: 100% of core modules.

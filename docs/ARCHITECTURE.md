@@ -1,9 +1,9 @@
 ## Architecture Overview
 
 ### Components
-- Server: authoritative game state, authentication, question selection, scoring, persistence.
-- Client: user-facing CLI that drives authentication, gameplay, and stats display.
-- Shared protocol: JSON line messages between client and server.
+- Server: the source of truth for auth, questions, scoring, and persistence.
+- Client: CLI app that handles login, gameplay, and showing stats.
+- Shared protocol: simple JSON lines between client and server (one message per line).
 
 ### Modules
 - `server/auth.py`: password hashing and verification.
@@ -19,7 +19,7 @@
 - Questions stored in `data/questions.json` as a list of records with category and correct answer.
 
 ### Protocol (JSON line)
-Each request/response is a JSON object delimited by `\\n`.
+Each request/response is a JSON object delimited by `\\n`. It keeps the wire format pretty simple.
 
 Requests:
 - `register`: `{type, username, password}`
@@ -37,4 +37,4 @@ Responses:
 
 ### Concurrency
 - Threaded TCP server supports multiple simultaneous clients.
-- DataStore uses a lock to ensure consistent user updates.
+- DataStore uses a lock to keep user updates consistent.

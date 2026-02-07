@@ -1,7 +1,7 @@
 ## System Test Report
 
 ### Scope
-End-to-end client–server communication and gameplay workflow.
+End-to-end client-server communication and gameplay workflow.
 
 ### Strategy
 - Start the server with a temporary data directory and sample questions.
@@ -20,6 +20,7 @@ End-to-end client–server communication and gameplay workflow.
 
 ### Results
 - All system tests passed using `tests/test_system.py`.
+- It's a small set of cases, but it hits the main happy path.
 
 ### Notes
 - Errors for invalid requests and authentication failures are handled through explicit error responses.

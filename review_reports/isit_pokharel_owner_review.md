@@ -15,7 +15,7 @@ Provide a concise description of the code under review.
 
 - Purpose of the unit/module:
   Implement a distributed trivia game with authentication, category-based questions,
-  wagering, scoring, and persistent user stats.
+  wagering, scoring, and persistent user stats. It's meant to be small but complete.
 - Primary responsibilities:
   - Server: authenticate users, validate wagers, select questions, score answers,
     persist stats, handle concurrency.

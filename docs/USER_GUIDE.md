@@ -17,7 +17,7 @@ python -m server.server --host 127.0.0.1 --port 5000 --data-dir data
 ```
 
 ### Run the client
-In a separate terminal from the project root:
+In a seperate terminal from the project root:
 ```
 python -m client.client --host 127.0.0.1 --port 5000
 ```

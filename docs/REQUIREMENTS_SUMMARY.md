@@ -1,7 +1,7 @@
 ## Project Requirements Summary
 
 ### System overview
-- Implement a client–server trivia game with multiple users, authentication, wagering, and persistent statistics.
+- Implement a client-server trivia game with multiple users, authentication, wagering, and persistent statistics.
 - Emphasize clean architecture, protocol design, robustness, security, and extensibility.
 
 ### Server requirements

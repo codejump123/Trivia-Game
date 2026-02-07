@@ -1,4 +1,5 @@
 ## Review Log
+Raw list of findings from the review sessions.
 
 ### Review Scope
 Units reviewed: `server/game_logic.py`, `server/question_bank.py`, `server/server.py`, `common/protocol.py`, `client/client.py`, `tests/`.

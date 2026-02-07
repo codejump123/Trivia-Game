@@ -5,6 +5,7 @@ Team:
 - Isit Pokharel
 - Durga Sai Sandeep Rayapureddy
 - Thien Tan Nguyen
+- Dhruv Sharma
 
 # Trivia Game (Client-Server)
 
